@@ -1,0 +1,27 @@
+<h1>ALL task</h1>
+
+<%= form_tag(tasks_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Ricerca per Note, Chi o Stato", class: "search" %>
+  <%= submit_tag "Cerca", class: "aggiungi" %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Apertura</th>
+    <th>Stato</th>
+    <th>Chi</th>
+    <th colspan="4">Note</th>
+  </tr>
+
+  <% @task.each do |t| %>
+    <tr>
+      <td><%= t.data_apertura %></td>
+      <td><%= t.stato %></td>
+      <td><%= t.chi %></td>
+      <td><%= t.note %></td>
+      <td><%= link_to 'Mostra', task_path(t) %></td>
+      <td><%= link_to 'Modifica', edit_task_path(t) %></td>
+      <td><%= link_to 'Eliminia', task_path(t), method: :delete, data:{ confirm: 'Sicuro di voler eliminare la Task??' } %></td>
+    </tr>
+  <% end %>
+</table>

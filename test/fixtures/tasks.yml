@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_apertura: 2016-09-17
+  chi: MyString
+  stato: MyString
+  note: MyText
+
+two:
+  data_apertura: 2016-09-17
+  chi: MyString
+  stato: MyString
+  note: MyText
