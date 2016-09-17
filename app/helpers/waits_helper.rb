@@ -1,0 +1,2 @@
+module WaitsHelper
+end

@@ -1,0 +1,16 @@
+<h1>Crea un nuovo task a scadenza</h1>
+
+<%= form_for :task, url: {action: "create"} do |f| %>
+
+	<%= f.label :data_scadenza %><br>
+	<%= f.date_select :data_scadenza %><br>
+	
+	<%= f.label :chi %><br>
+	<%= f.select :chi, [['IO','IO'],['ROMANIA','ROMANIA'],['INDIA','INDIA'],['ORGANIZZAZIONE','ORGANIZZAZIONE']] %><br>
+	
+	<%= f.label :note %><br>
+	<%= f.text_area :note %><br>
+
+	<%= f.submit "Aggiungi", class: "aggiungi" %>
+	<%= link_to 'Back', waits_path %>
+<% end %>

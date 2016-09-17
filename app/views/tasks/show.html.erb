@@ -1,2 +1,19 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<h1>Ecco il tuo task</h1>
+
+<p>
+  <strong>Data inserimento:</strong>
+  <%= @task.data_apertura %>
+</p>
+ 
+<p>
+  <strong>Stato:</strong>
+  <%= @task.stato %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @task.note %>
+</p>
+
+<%= link_to 'Back', tasks_path %>
+<%= link_to 'Modifica', edit_task_path(@task) %>
