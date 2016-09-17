@@ -1,0 +1,2 @@
+class ArchivedTask < ApplicationRecord
+end

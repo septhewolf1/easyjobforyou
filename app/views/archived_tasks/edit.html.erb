@@ -1,12 +1,12 @@
-<h1>Modifica il task</h1>
+<h1>Modifica task archiviato</h1>
 
-<%= form_for :task, url: {action: "update"}, method: :patch do |f| %>
-	
+<%= form_for :archived_task, url: {action: "update"}, method: :patch do |f| %>
+
 	<%= f.label :data_apertura %><br>
 	<%= f.date_select :data_apertura %><br>
 
 	<%= f.label :stato %><br>
-	<%= f.select :stato, [['DA FARE','DA FARE'],['IN LAVORAZIONE','IN LAVORAZIONE'],['FATTO','FATTO']] %><br>
+	<%= f.select :stato, [['DA FARE','DA FARE'],['IN LAVORAZIONE','IN LAVORAZIONE']] %><br>
 	
 	<%= f.label :chi %><br>
 	<%= f.select :chi, [['IO','IO'],['ROMANIA','ROMANIA'],['INDIA','INDIA'],['ORGANIZZAZIONE','ORGANIZZAZIONE']] %><br>
@@ -15,6 +15,6 @@
 	<%= f.text_area :note %><br>
 
 	<%= f.submit "Modifica", class: "aggiungi" %>
-	<%= link_to 'Back', tasks_path %>
+	<%= link_to 'Back', archived_tasks_path %>
 
 <% end %>

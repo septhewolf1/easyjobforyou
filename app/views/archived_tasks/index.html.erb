@@ -1,0 +1,29 @@
+<h1>Task Fatti e Archiviati</h1>
+
+<%= form_tag(archived_tasks_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Ricerca per Note o Chi", class: "search" %>
+  <%= submit_tag "Search", class: "aggiungi" %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Apertura</th>
+    <th>Chiusura</th>
+    <th>Stato</th>
+    <th>Chi</th>
+    <th colspan="2">Note</th>
+  </tr>
+
+  <% @archived_task.each do |t| %>
+    <tr>
+      <td><%= t.data_apertura %></td>
+      <td><%= t.data_chiusura %></td>
+      <td><%= t.stato %></td>
+      <td><%= t.chi %></td>
+      <td><%= t.note %></td>
+      <td><%= link_to 'Modifica', edit_archived_task_path(t) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Tutti i Task', tasks_path %>
