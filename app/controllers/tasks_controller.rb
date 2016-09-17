@@ -15,6 +15,10 @@ class TasksController < ApplicationController
 	def new
 	end
 
+	def edit
+		@task = Task.find(params[:id])
+	end
+
 	def create
 		#render plain: params[:task].inspect
 		@task = Task.new(params.require(:task).permit(:stato, :chi, :note))
