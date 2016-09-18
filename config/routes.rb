@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   
+  get 'admin/index'
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
   get 'sessions/new'
 
   get 'sessions/create'
@@ -7,26 +14,6 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   resources :users
-  
-  get 'waits/index'
-
-  get 'waits/edit'
-
-  get 'waits/new'
-
-  get 'archived_tasks/index'
-
-  get 'archived_tasks/edit'
-
-  get 'tasks/index'
-
-  get 'tasks/edit'
-
-  get 'tasks/new'
-
-  get 'tasks/show'
-
-  get 'welcome/index'
 
   resources :tasks
 
