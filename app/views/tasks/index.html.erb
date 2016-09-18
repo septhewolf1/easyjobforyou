@@ -21,7 +21,7 @@
       <td><%= t.note %></td>
       <td><%= link_to 'Mostra', task_path(t) %></td>
       <td><%= link_to 'Modifica', edit_task_path(t) %></td>
-      <td><%= link_to 'Eliminia', task_path(t), method: :delete, data:{ confirm: 'Sicuro di voler eliminare la Task??' } %></td>
+      <td><%= link_to 'Elimina', task_path(t), method: :delete, data:{ confirm: 'Sicuro di voler eliminare la Task??' } %></td>
     </tr>
   <% end %>
 </table>
