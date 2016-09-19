@@ -14,69 +14,93 @@
  *= require_self
  */
 
-table, th, td {
-   padding: 7px;
+@import 'sass/variables'; 
+
+
+.container-search {
+    margin-top: 25px;
+    .search {
+        width: 178px;
+        height: 36px;
+        border-radius:5px;
+        outline: none;
+        
+    }
+    @media screen and (min-width: $break-large) {
+        padding-left: 300px!important;
+        input:focus {
+            width: 76%;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+  }
+
 }
 
-th {
-	height: 30px;
-	border-bottom: 1px solid #ddd;
-	background-color: #4CAF50;
-    color: white;
-}
 
-td {
-	border-bottom: 1px solid #ddd;
-}
+// table, th, td {
+//    padding: 7px;
+// }
 
-table {
-	width: 100%;
-}
+// th {
+// 	height: 30px;
+// 	border-bottom: 1px solid #ddd;
+// 	background-color: #4CAF50;
+//     color: white;
+// }
 
-tr:nth-child(even) {background-color: #f2f2f2}
+// td {
+// 	border-bottom: 1px solid #ddd;
+// }
 
-a:link, a:visited {
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px 10px;
-    text-align: center; 
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 4px;
-    border: 2px solid #4CAF50;
-    width: 80px;
-    font-size: 14px;
-    font-family: Arial;
-}
+// table {
+// 	width: 100%;
+// }
 
-a:hover, a:active {
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50;
-}
+// tr:nth-child(even) {background-color: #f2f2f2}
 
-.aggiungi, .aggiungi:visited {
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px 10px;
-    text-align: center; 
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 4px;
-    border: 2px solid #4CAF50;
-    width: 80px;
-    font-size: 14px;
-    font-family: Arial;
-}
+// a:link, a:visited {
+//     background-color: #4CAF50;
+//     color: white;
+//     padding: 5px 10px;
+//     text-align: center; 
+//     text-decoration: none;
+//     display: inline-block;
+//     border-radius: 4px;
+//     border: 2px solid #4CAF50;
+//     width: 80px;
+//     font-size: 14px;
+//     font-family: Arial;
+// }
 
-.aggiungi:hover, .aggiungi:active {
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50;
-    cursor:pointer;
-}
+// a:hover, a:active {
+//     background-color: white;
+//     color: black;
+//     border: 2px solid #4CAF50;
+// }
 
-.search {
-    width: 250px;
-    height: 25px;
-}
+// .aggiungi, .aggiungi:visited {
+//     background-color: #4CAF50;
+//     color: white;
+//     padding: 5px 10px;
+//     text-align: center; 
+//     text-decoration: none;
+//     display: inline-block;
+//     border-radius: 4px;
+//     border: 2px solid #4CAF50;
+//     width: 80px;
+//     font-size: 14px;
+//     font-family: Arial;
+// }
+
+// .aggiungi:hover, .aggiungi:active {
+//     background-color: white;
+//     color: black;
+//     border: 2px solid #4CAF50;
+//     cursor:pointer;
+// }
+
+// .search {
+//     width: 250px;
+//     height: 25px;
+// }
