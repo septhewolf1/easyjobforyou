@@ -13,19 +13,60 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: #339966 !important; }
+
+.border-table {
+  border-radius: 25px !important; }
+
+.table-bordered {
+  border: 1px solid #ddd; }
+
+thead {
+  background-color: #e6e6e6 !important; }
+
+thead tr:hover {
+  background-color: #e6e6e6 !important; }
+
+tr:hover {
+  background-color: #f2f2f2 !important; }
+
+.btn {
+  border-width: 1px 1px 2px 1px !important; }
+
+.btn:hover {
+  border-width: 1px 1px 1px 1px !important; }
+
+.container-actions {
+  margin-bottom: 2px; }
+
+.container-header {
+  background-color: #f2f2f2;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 28px; }
+
 .container-search {
   margin-top: 25px; }
+  .container-search .btn {
+    margin-bottom: 4px;
+    margin-top: 1px; }
+  .container-search .btn:hover {
+    border-bottom: 1px solid black !important; }
   .container-search .search {
     width: 178px;
-    height: 36px;
+    height: 32px;
     border-radius: 5px;
     outline: none; }
   @media screen and (min-width: 1200px) {
     .container-search {
-      padding-left: 300px !important; }
+      padding-left: 276px !important; }
       .container-search input:focus {
         width: 76%;
         -webkit-transition: width 0.4s ease-in-out;
         transition: width 0.4s ease-in-out; } }
+  @media screen and (max-width: 1200px) {
+    .container-search {
+      padding-left: 230px !important; } }
 
 /*# sourceMappingURL=application.css.map */

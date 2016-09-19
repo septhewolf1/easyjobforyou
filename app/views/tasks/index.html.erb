@@ -1,24 +1,36 @@
-<div class="container">
+<div class="container-header">
+<div class="container container-header">
 <div class="row">
   <h1 class="col-xs-6">ALL task</h1>
   <div class="col-xs-6 container-search">
     <%= form_tag(tasks_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Ricerca per Note, Chi o Stato", class: "search" %>
-      <%= submit_tag "Cerca", class: "btn btn-default" %>
+      <%= submit_tag "Cerca", class: "btn btn-default btn-sm" %>
     <% end %>
   </div>
 </div>
 </div>
+</div>
 <div class="container">
-<table class="table table-striped table-hover">
+<div class="pull-right container-actions">
+  <%= link_to 'Nuovo Task', new_task_path, class: "btn btn-default" %>
+          <%= link_to 'Task Fatti', archived_tasks_path, class: "btn btn-success" %>
+          <%= link_to 'In scadenza', waits_path, class: "btn btn-warning" %>
+</div></div>
+<div class="container">
+<div class="panel panel-default">
+<table class="table table-bordered table-striped table-striped">
 
   <thead>
-    <tr class="success" >
-      <th>Apertura</th>
-      <th>Stato</th>
-      <th>Chi</th>
-      <th colspan="4">Note</th>
+  <div class="row">
+    <tr>
+      <th class="col-xs-1">Apertura</th>
+      <th class="col-xs-2">Stato</th>
+      <th class="col-xs-1">Chi</th>
+      <th class="col-xs-5">Note</th>
+      <th class="col-xs-3"></th>
     </tr>
+    </div>
   </thead>
   <% @task.each do |t| %>
   <tbody>
@@ -28,16 +40,13 @@
       <td class="col-xs-2"><%= t.stato %></td>
       <td class="col-xs-1"><%= t.chi %></td>
       <td class="col-xs-5"><%= t.note %></td>
-      <td class="col-xs-3"><%= link_to 'Mostra', task_path(t), class: "btn btn-success" %>
-      <%= link_to 'Modifica', edit_task_path(t), class: "btn btn-warning" %>
-      <%= link_to 'Eliminia', task_path(t), method: :delete, data:{ confirm: 'Sicuro di voler eliminare la Task??' }, class: "btn btn-danger" %></td>
+      <td class="col-xs-3"><%= link_to 'Mostra', task_path(t), class: "btn btn-success btn-sm" %>
+      <%= link_to 'Modifica', edit_task_path(t), class: "btn btn-warning btn-sm" %>
+      <%= link_to 'Eliminia', task_path(t), method: :delete, data:{ confirm: 'Sicuro di voler eliminare la Task??' }, class: "btn btn-danger btn-sm" %></td>
     </tr>
     </div>
   </tbody>
   <% end %>
 </table>
 </div>
-
-<%= link_to 'Nuovo Task', new_task_path%>
-<%= link_to 'Task Fatti', archived_tasks_path %>
-<%= link_to 'In scadenza', waits_path %>
+</div>

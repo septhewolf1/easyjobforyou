@@ -16,26 +16,79 @@
 
 @import 'sass/variables'; 
 
+body {
+    background-color: #339966!important;
+}
+.panel {
 
+}
+
+.border-table{
+    border-radius: 25px!important;
+}
+.table-bordered {
+    border: 1px solid #ddd;
+}
+thead {
+    background-color:#e6e6e6!important;
+}
+
+thead {
+    tr:hover {
+    background-color:#e6e6e6!important;
+}
+}
+tr:hover {
+    background-color:#f2f2f2!important;
+}
+.btn{
+    border-width: 1px 1px 2px 1px!important; 
+}
+.btn:hover {
+     border-width: 1px 1px 1px 1px!important; 
+}
+.container-actions {
+    margin-bottom: 2px;
+}
+.container-header {
+    background-color: #f2f2f2;
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px; 
+    margin-bottom: 28px;
+}
 .container-search {
     margin-top: 25px;
+    .btn {
+
+        margin-bottom: 4px;
+        margin-top: 1px;
+    }
+    .btn:hover {
+        border-bottom: 1px solid black!important;
+    }
     .search {
         width: 178px;
-        height: 36px;
+        height: 32px;
         border-radius:5px;
         outline: none;
         
     }
     @media screen and (min-width: $break-large) {
-        padding-left: 300px!important;
+        padding-left: 276px!important;
         input:focus {
             width: 76%;
             -webkit-transition: width 0.4s ease-in-out;
             transition: width 0.4s ease-in-out;
         }
   }
+    @media screen and (max-width: $break-large) {
+        padding-left: 230px!important;
+        
+  }
 
 }
+
+    
 
 
 // table, th, td {
