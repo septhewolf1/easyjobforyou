@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorize #l'unica azione che permetto è il login
+
   def new
   end
 
@@ -14,6 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
   	session[:user_id] = nil
-  	redirect_to welcome_url, notice: "Logged out"
+  	redirect_to login_url, notice: "Logged out"
   end
 end
