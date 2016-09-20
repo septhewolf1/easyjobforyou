@@ -1,23 +1,22 @@
 Rails.application.routes.draw do
-  get 'waits/index'
+  
+  root 'admin#index'
 
-  get 'waits/edit'
+  get 'admin/index'
+  
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
 
-  get 'waits/new'
+  get 'sessions/new'
 
-  get 'archived_tasks/index'
+  get 'sessions/create'
 
-  get 'archived_tasks/edit'
+  get 'sessions/destroy'
 
-  get 'tasks/index'
-
-  get 'tasks/edit'
-
-  get 'tasks/new'
-
-  get 'tasks/show'
-
-  get 'welcome/index'
+  resources :users
 
   resources :tasks
 
@@ -25,6 +24,6 @@ Rails.application.routes.draw do
 
   resources :waits
 
-  root 'welcome#index'
+  #root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
