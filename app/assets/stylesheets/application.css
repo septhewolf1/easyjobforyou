@@ -45,8 +45,6 @@ tr:hover {
   .container-search .btn {
     margin-bottom: 4px;
     margin-top: 1px; }
-  .container-search .btn:hover {
-    border-bottom: 1px solid black !important; }
   .container-search .search {
     width: 178px;
     height: 32px;
