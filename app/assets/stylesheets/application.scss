@@ -15,7 +15,6 @@
  */
 
 @import 'sass/variables'; 
-@import 'sass/mixins'; 
 
 body {
     background-color: $background-color!important;
@@ -84,7 +83,10 @@ tr:hover {
     }
 }
 
-    
+.overwrite-formcontrol {
+    display: inline-block!important;
+    width: 30%!important;
+}  
 
 
 // table, th, td {

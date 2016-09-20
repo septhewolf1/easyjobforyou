@@ -1,16 +1,42 @@
-<h1>Crea un nuovo task</h1>
-
-<%= form_for :task, url: {action: "create"} do |f| %>
-
-	<%= f.label :stato %><br>
-	<%= f.select :stato, [['DA FARE','DA FARE'],['IN LAVORAZIONE','IN LAVORAZIONE'],['FATTO','FATTO']] %><br>
-	
-	<%= f.label :chi %><br>
-	<%= f.select :chi, [['IO','IO'],['ROMANIA','ROMANIA'],['INDIA','INDIA'],['ORGANIZZAZIONE','ORGANIZZAZIONE']] %><br>
-	
-	<%= f.label :note %><br>
-	<%= f.text_area :note %><br>
-
-	<%= f.submit "Aggiungi", class: "aggiungi" %>
-	<%= link_to 'Back', tasks_path %>
-<% end %>
+<div class="container-header">
+  <div class="container container-header">
+    <div class="row">
+      <h1>Crea un nuovo task</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="panel panel-default">
+	  <%= form_for :task, url: {action: "create"} do |f| %>
+	    <table class="table table-bordered table-striped table-striped">    
+	      <thead>
+	        <div class="row">
+	          <tr>
+	            <th class="col-xs-2"><%= f.label :stato %></th>
+	            <th class="col-xs-2"><%= f.label :chi %></th>
+	            <th class="col-xs-5"><%= f.label :note %></th>
+	            <th class="col-xs-3"></th>
+	          </tr>
+	        </div>
+	      </thead>
+	      <tbody>     	
+	        <div class="row">
+	          <tr>
+	            <td class="col-xs-2">
+	            	<%= f.select :stato, [['DA FARE','DA FARE'],['IN LAVORAZIONE','IN LAVORAZIONE'],['FATTO','FATTO']],{}, { :class => 'form-control' }%>
+	            </td>
+	            <td class="col-xs-2">
+					<%= f.select :chi, [['IO','IO'],['ROMANIA','ROMANIA'],['INDIA','INDIA'],['ORGANIZZAZIONE','ORGANIZZAZIONE']],{}, { :class => 'form-control' } %>
+	            </td>
+	            <td class="col-xs-5"><%= f.text_area :note, class: "form-control" %></td>
+	            <td class="col-xs-3">
+	            	<%= f.submit "Aggiungi", class: "btn btn-success" %>	
+	            	<%= link_to 'Back', tasks_path, class: "btn btn-default" %>			
+	            </td>
+	          </tr>
+	        </div>        
+	      </tbody>   
+	    </table>
+	  <% end %>
+  </div>
+</div>
