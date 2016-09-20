@@ -32,8 +32,8 @@
           </tr>
         </div>
       </thead>
-      <% @wait.each do |t| %>
       <tbody>
+        <% @wait.each do |t| %>
         <div class="row">
           <tr>
             <td class="col-xs-1"><%= t.data_apertura %></td>
@@ -46,8 +46,8 @@
             </td>
           </tr>
         </div>
+        <% end %>
       </tbody>
-      <% end %>
     </table>
   </div>
 </div>

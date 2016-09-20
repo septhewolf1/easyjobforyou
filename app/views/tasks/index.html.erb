@@ -32,8 +32,9 @@
           </tr>
         </div>
       </thead>
-      <% @task.each do |t| %>
+      
       <tbody>
+        <% @task.each do |t| %>
         <div class="row">
           <tr>
             <td class="col-xs-1"><%= t.data_apertura %></td>
@@ -47,8 +48,9 @@
             </td>
           </tr>
         </div>
+        <% end %>
       </tbody>
-      <% end %>
+      
     </table>
     
   </div>
