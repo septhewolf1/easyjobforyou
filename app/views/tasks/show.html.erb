@@ -1,19 +1,40 @@
-<h1>Ecco il tuo task</h1>
-
-<p>
-  <strong>Data inserimento:</strong>
-  <%= @task.data_apertura %>
-</p>
+<div class="container-header">
+  <div class="container container-header">
+    <div class="row">
+      <h1 class="col-xs-6">Ecco il tuo task</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="pull-right container-actions">
+    <%= link_to 'Back', tasks_path, class: "btn btn-default" %>
+	<%= link_to 'Modifica', edit_task_path(@task), class: "btn btn-warning" %>
+  </div>
+</div>
+<div class="container">
+  <div class="panel panel-default">
+    <table class="table table-bordered table-striped table-striped">
+      <thead>
+        <div class="row">
+          <tr>
+            <th class="col-xs-2">Data inserimento</th>
+            <th class="col-xs-2">Stato</th>
+            <th class="col-xs-5">Note</th>
+            <th class="col-xs-3"></th>
+          </tr>
+        </div>
+      </thead>
+      <tbody>
+        <div class="row">
+          <tr>
+            <td class="col-xs-2"><%= @task.data_apertura %></td>
+            <td class="col-xs-2"><%= @task.stato %></td>
+            <td class="col-xs-5"><%= @task.note %></td>
+            <td class="col-xs-3"></td>
+          </tr>
+        </div>
+      </tbody>
+    </table>
+  </div>
+</div>
  
-<p>
-  <strong>Stato:</strong>
-  <%= @task.stato %>
-</p>
-
-<p>
-  <strong>Note:</strong>
-  <%= @task.note %>
-</p>
-
-<%= link_to 'Back', tasks_path %>
-<%= link_to 'Modifica', edit_task_path(@task) %>

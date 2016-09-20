@@ -13,70 +13,56 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: #339966 !important; }
 
-table, th, td {
-   padding: 7px;
-}
+thead {
+  background-color: #e6e6e6; }
 
-th {
-	height: 30px;
-	border-bottom: 1px solid #ddd;
-	background-color: #4CAF50;
-    color: white;
-}
+thead tr:hover {
+  background-color: #e6e6e6 !important; }
 
-td {
-	border-bottom: 1px solid #ddd;
-}
+tr:hover {
+  background-color: #f2f2f2 !important; }
 
-table {
-	width: 100%;
-}
+.btn {
+  border-width: 1px 1px 2px 1px !important; }
 
-tr:nth-child(even) {background-color: #f2f2f2}
+.btn:hover {
+  border-width: 1px 1px 1px 1px !important; }
 
-a:link, a:visited {
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px 10px;
-    text-align: center; 
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 4px;
-    border: 2px solid #4CAF50;
-    width: 80px;
-    font-size: 14px;
-    font-family: Arial;
-}
+.container-actions {
+  margin-bottom: 2px; }
 
-a:hover, a:active {
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50;
-}
+.container-header {
+  background-color: #f2f2f2;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 28px; }
 
-.aggiungi, .aggiungi:visited {
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px 10px;
-    text-align: center; 
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 4px;
-    border: 2px solid #4CAF50;
-    width: 80px;
-    font-size: 14px;
-    font-family: Arial;
-}
+.container-search {
+  margin-top: 25px; }
+  .container-search .btn {
+    margin-bottom: 4px;
+    margin-top: 1px; }
+  .container-search .search {
+    width: 178px;
+    height: 32px;
+    border-radius: 5px;
+    outline: none; }
+  @media screen and (min-width: 1200px) {
+    .container-search {
+      padding-left: 276px !important; }
+      .container-search input:focus {
+        width: 76%;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out; } }
+  @media screen and (max-width: 1200px) {
+    .container-search {
+      padding-left: 230px !important; } }
 
-.aggiungi:hover, .aggiungi:active {
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50;
-    cursor:pointer;
-}
+.overwrite-formcontrol {
+  display: inline-block !important;
+  width: 30% !important; }
 
-.search {
-    width: 250px;
-    height: 25px;
-}
+/*# sourceMappingURL=application.css.map */

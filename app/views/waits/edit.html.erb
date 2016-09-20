@@ -1,20 +1,48 @@
-<h1>Modifica task a scadenza</h1>
-
-<%= form_for :wait, url: {action: "update"}, method: :patch do |f| %>
-
-	<%= f.label :data_scadenza %><br>
-	<%= f.date_select :data_scadenza %><br>
-
-	<%= f.label :stato %><br>
-	<%= f.select :stato, [['DA FARE','DA FARE'],['IN LAVORAZIONE','IN LAVORAZIONE'],['ATTESA','ATTESA'],['FATTO', 'FATTO']] %><br>
-	
-	<%= f.label :chi %><br>
-	<%= f.select :chi, [['IO','IO'],['ROMANIA','ROMANIA'],['INDIA','INDIA'],['ORGANIZZAZIONE','ORGANIZZAZIONE']] %><br>
-
-	<%= f.label :note %><br>
-	<%= f.text_area :note %><br>
-
-	<%= f.submit "Modifica", class: "aggiungi" %>
-	<%= link_to 'Back', waits_path %>
-
-<% end %>
+<div class="container-header">
+  <div class="container container-header">
+    <div class="row">
+      <h1>Modifica task a scadenza</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="panel panel-default">
+	  <%= form_for :wait, url: {action: "update"}, method: :patch do |f| %>
+	    <table class="table table-bordered table-striped table-striped">    
+	      <thead>
+	        <div class="row">
+	          <tr>
+	            <th class="col-xs-3"><%= f.label :data_scadenza %></th>
+	            <th class="col-xs-2"><%= f.label :stato %></th>
+	            <th class="col-xs-1"><%= f.label :chi %></th>
+	            <th class="col-xs-4"><%= f.label :note %></th>
+	            <th class="col-xs-2"></th>
+	          </tr>
+	        </div>
+	      </thead>
+	      <tbody>     	
+	        <div class="row">
+	          <tr>
+	            <td class="col-xs-3">
+	            	<%= f.date_select :data_scadenza,{}, { :class => 'form-control overwrite-formcontrol' } %>
+	            </td>
+	            <td class="col-xs-2">
+	            <%= f.select :stato, [['DA FARE','DA FARE'],['IN LAVORAZIONE','IN LAVORAZIONE'],['ATTESA','ATTESA'],['FATTO', 'FATTO']],{}, { :class => 'form-control' } %>
+	            </td>
+	            <td class="col-xs-1">
+				<%= f.select :chi, [['IO','IO'],['ROMANIA','ROMANIA'],['INDIA','INDIA'],['ORGANIZZAZIONE','ORGANIZZAZIONE']],{}, { :class => 'form-control' } %>
+				</td>
+	            <td class="col-xs-4">
+	            	<%= f.text_area :note, class: "form-control" %>
+	            </td>
+	            <td class="col-xs-2">
+	            	<%= f.submit "Modifica", class: "btn btn-warning" %>
+					<%= link_to 'Back', tasks_path, class: "btn btn-default" %>		
+	            </td>
+	          </tr>
+	        </div>        
+	      </tbody>   
+	    </table>
+	  <% end %>
+  </div>
+</div>
