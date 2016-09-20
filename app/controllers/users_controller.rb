@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorize #l'unica azione che permetto è il login
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: "L'utente {@user.name} è stato creato correttamente." }
+        format.html { redirect_to login_url, notice: "L'utente #{@user.name} è stato creato correttamente." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_url, notice: "L'utente {@user.name} è stato aggiornato correttamente." }
+        format.html { redirect_to login_url, notice: "L'utente #{@user.name} è stato aggiornato correttamente." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

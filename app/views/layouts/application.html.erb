@@ -9,6 +9,9 @@
   </head>
 
   <body>
+  <% if session[:user_id] %>
+  	<%= button_to 'Logout', logout_path, method: :delete, class:"aggiungi" %>
+<% end %>
     <%= yield %>
   </body>
 </html>
