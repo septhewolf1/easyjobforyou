@@ -20,9 +20,33 @@
   </head>
 
   <body>
-  <% if session[:user_id] %>
-  	<%= button_to 'Logout', logout_path, method: :delete, class:"aggiungi" %>
-<% end %>
+    <% if content_for? :menu %>
+      <div class="container-header">
+        <div class="container container-header">
+          <div class="row">
+            <%= yield :menu %>
+            <% if current_page?(tasks_path) %>
+              <div class="col-xs-5 container-search">
+                <%= form_tag(tasks_path, :method => "get", id: "search-form") do %>
+                  <%= text_field_tag :search, params[:search], placeholder: "Ricerca per Note, Chi o Stato", class: "search" %>
+                  <%= submit_tag "Cerca", class: "btn btn-default btn-sm" %>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="col-xs-5 container-search">
+
+              </div>
+            <% end %>
+            <div class="col-xs-1">
+              <% if session[:user_id] %>
+                <%= button_to 'Logout', logout_path, method: :delete, class:"btn btn-default btn-xs logout-button pull-right" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  
     <%= yield %>
   </body>
 </html>

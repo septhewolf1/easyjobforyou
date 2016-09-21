@@ -1,10 +1,6 @@
-<div class="container-header">
-  <div class="container container-header">
-    <div class="row">
-      <h1 class="col-xs-6">Ecco il tuo task</h1>
-    </div>
-  </div>
-</div>
+<% content_for :menu do %>
+  <h1 class="col-xs-6">Ecco il tuo task</h1>
+<% end %>
 <div class="container">
   <div class="pull-right container-actions">
     <%= link_to 'Back', tasks_path, class: "btn btn-default" %>
