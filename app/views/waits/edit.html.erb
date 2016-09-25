@@ -27,7 +27,7 @@
 	            	<%= f.date_select :data_scadenza,{}, { :class => 'form-control overwrite-formcontrol' } %>
 	            </td>
 	            <td class="col-xs-2">
-	            <%= f.select :stato, [['DA FARE','DA FARE'],['IN LAVORAZIONE','IN LAVORAZIONE'],['ATTESA','ATTESA'],['FATTO', 'FATTO']],{}, { :class => 'form-control' } %>
+	            <%= f.select :stato, [['DA FARE','DA FARE'],['IN LAVORAZIONE','IN LAVORAZIONE'],['IN SCADENZA','IN SCADENZA'],['FATTO', 'FATTO']],{}, { :class => 'form-control' } %>
 	            </td>
 	            <td class="col-xs-1">
 				<%= f.select :chi, [['IO','IO'],['ROMANIA','ROMANIA'],['INDIA','INDIA'],['ORGANIZZAZIONE','ORGANIZZAZIONE']],{}, { :class => 'form-control' } %>

@@ -3,7 +3,8 @@ class ArchivedTasksController < ApplicationController
 		if params[:search]
 			@archived_task = ArchivedTask.search(params[:search]).order("data_chiusura") #ricerco e ordino per stato
 		else
-			@archived_task = ArchivedTask.all.order("data_chiusura") #ordino i task per "data_chiusura")
+			#@archived_task = ArchivedTask.all.order("data_chiusura") #ordino i task per "data_chiusura")
+			@archived_task = ArchivedTask.where(user_id: session[:user_id])
 		end
   	end
 
